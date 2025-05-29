@@ -7,8 +7,16 @@ import com.example.apptest.vo.GrowthDiaryVo;
 
 public interface GrowthDiaryService extends IService<GrowthDiary> {
 
-
+    /**
+     * 根据UserId分页查询
+     * @param growthDiaryVo
+     * @return
+     */
     IPage<GrowthDiaryVo> getPageListByUserId(GrowthDiaryVo growthDiaryVo);
 
+    /**
+     * 添加接口
+     * @param growthDiary
+     */
     void add(GrowthDiary growthDiary);
 }

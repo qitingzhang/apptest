@@ -49,10 +49,10 @@ public class GrowthDiaryController {
 
     @ApiOperation("添加接口")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "mainName", value = "受控机名称"),
-            @ApiImplicitParam(name = "ip", value = "受控机Ip"),
-            @ApiImplicitParam(name = "groupName", value = "资源组名称"),
-            @ApiImplicitParam(name = "runStatus", value = "受控机状态")})
+            @ApiImplicitParam(name = "userId", value = "用户id"),
+            @ApiImplicitParam(name = "title", value = "标题"),
+            @ApiImplicitParam(name = "content", value = "内容"),
+            @ApiImplicitParam(name = "emotion", value = "表情")})
     @PostMapping("/add")
     public Result add(@RequestBody GrowthDiary growthDiary) {
         try{

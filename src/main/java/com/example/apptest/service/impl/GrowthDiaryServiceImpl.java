@@ -31,8 +31,13 @@ public class GrowthDiaryServiceImpl extends ServiceImpl<GrowthDiaryMapper, Growt
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void add(GrowthDiary growthDiary) {
-        growthDiary.setCreatedAt(LocalDateTime.now());
-        growthDiaryMapper.insert(growthDiary);
+        GrowthDiary diary = new GrowthDiary();
+        diary.setUserId(growthDiary.getUserId());
+        diary.setTitle(growthDiary.getTitle());
+        diary.setContent(growthDiary.getContent());
+        diary.setEmotion(growthDiary.getEmotion());
+        diary.setCreatedAt(LocalDateTime.now());
+        growthDiaryMapper.insert(diary);
     }
 
 }
